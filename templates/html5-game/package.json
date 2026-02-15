@@ -1,0 +1,10 @@
+{
+    "name": "spark",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "npx serve public"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}

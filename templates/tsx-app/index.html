@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expo-Lite Preview</title>
+  <style>
+    /* 1. Base Reset */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #050505;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 2. The Phone Frame */
+    .phone-container {
+      position: relative;
+      width: 375px; /* Standard iPhone Width */
+      height: 812px; /* Standard iPhone Height */
+      background: #000;
+      border: 12px solid #1a1a1a;
+      border-radius: 50px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* 3. The Notch (Because... Modernity) */
+    .phone-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 25px;
+      background: #1a1a1a;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      z-index: 10;
+    }
+
+    /* 4. The App Surface */
+    #root {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: white; /* Fallback */
+    }
+
+    /* 5. Decorative Label */
+    .device-label {
+      position: absolute;
+      bottom: -40px;
+      color: #555;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-container">
+    <div id="root"></div>
+  </div>
+
+  <div class="device-label">Sparkly Expo-Lite Device</div>
+
+  <script type="module" src="/main.tsx"></script>
+</body>
+</html>
