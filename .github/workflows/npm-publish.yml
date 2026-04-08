@@ -3,8 +3,6 @@ name: Publish Package
 on:
   workflow_dispatch:
   push:
-    tags:
-      - 'v*'
 
 permissions:
   id-token: write  # Required for OIDC
@@ -20,7 +18,4 @@ jobs:
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
       - run: npm publish
